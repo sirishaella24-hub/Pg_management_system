@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #eef2f3;
+        }
+
+        .header {
+            background: #1e3c72;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px gray;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background: #1e3c72;
+            color: white;
+        }
+
+        .btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 2px;
+        }
+
+        .approve {
+            background: green;
+            color: white;
+        }
+
+        .reject {
+            background: red;
+            color: white;
+        }
+
+        .delete {
+            background: darkred;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        .home-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 10px 20px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .home-btn:hover {
+            background: #2a5298;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Admin Dashboard - Eswar Women's PG</h1>
+</div>
+
+<!-- TENANTS -->
+<h2>Tenants</h2>
+<table id="tenantTable">
+    <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Room</th>
+        <th>Sharing</th>
+        <th>Rent</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<!-- ROOM REQUESTS -->
+<h2>Room Requests</h2>
+<table id="requestTable">
+    <tr>
+        <th>ID</th>
+        <th>Room Type</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+</table>
+
+<!-- PAYMENTS -->
+<h2>Payments</h2>
+<table id="paymentTable">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Room</th>
+        <th>File</th>
+    </tr>
+</table>
+
+<button class="home-btn" onclick="goHome()">Back to Home</button>
+
+<script>
+
+    // LOAD TENANTS
+    fetch("/tenant/all")
+        .then(res => res.json())
+        .then(data => {
+            data.sort((a, b) => a.id - b.id);
+
+            let table = document.getElementById("tenantTable");
+            let index = 1;
+
+            data.forEach(t => {
+                let row = table.insertRow();
+
+                row.insertCell(0).innerText = index++;
+                row.insertCell(1).innerText = t.name;
+                row.insertCell(2).innerText = t.phone;
+                row.insertCell(3).innerText = t.roomNumber;
+                row.insertCell(4).innerText = t.sharingType;
+                row.insertCell(5).innerText = t.rentPaid;
+
+                let action = row.insertCell(6);
+
+                let delBtn = document.createElement("button");
+                delBtn.innerText = "Delete";
+                delBtn.className = "btn delete";
+                delBtn.onclick = () => deleteTenant(t.id);
+
+                action.appendChild(delBtn);
+            });
+        });
+
+    function deleteTenant(id) {
+        fetch("/tenant/delete/" + id, {
+            method: "DELETE"
+        }).then(() => location.reload());
+    }
+
+    // LOAD ROOM REQUESTS
+    fetch("/request/all")
+        .then(res => res.json())
+        .then(data => {
+            let table = document.getElementById("requestTable");
+
+            data.forEach(r => {
+                let row = table.insertRow();
+
+                row.insertCell(0).innerText = r.id;
+                row.insertCell(1).innerText = r.roomType;
+                row.insertCell(2).innerText = r.status;
+
+                let action = row.insertCell(3);
+
+                let approveBtn = document.createElement("button");
+                approveBtn.innerText = "Approve";
+                approveBtn.className = "btn approve";
+                approveBtn.onclick = () => updateRequest(r.id, "approve");
+
+                let rejectBtn = document.createElement("button");
+                rejectBtn.innerText = "Reject";
+                rejectBtn.className = "btn reject";
+                rejectBtn.onclick = () => updateRequest(r.id, "reject");
+
+                action.appendChild(approveBtn);
+                action.appendChild(rejectBtn);
+            });
+        });
+
+    function updateRequest(id, type) {
+        fetch("/request/" + type + "/" + id, {
+            method: "PUT"
+        }).then(() => location.reload());
+    }
+
+    // LOAD PAYMENTS
+    fetch("/payment/all")
+        .then(res => res.json())
+        .then(data => {
+            let table = document.getElementById("paymentTable");
+
+            data.forEach(p => {
+                let row = table.insertRow();
+
+                row.insertCell(0).innerText = p.id;
+                row.insertCell(1).innerText = p.name;
+                row.insertCell(2).innerText = p.roomNumber;
+
+                let link = document.createElement("a");
+                link.innerText = "View Receipt";
+                link.href = "/uploads/" + p.fileName;
+                link.target = "_blank";
+
+                row.insertCell(3).appendChild(link);
+            });
+        });
+
+    // BACK TO HOME
+    function goHome() {
+        window.location.href = "/index.html";
+    }
+
+</script>
+
+</body>
+</html>

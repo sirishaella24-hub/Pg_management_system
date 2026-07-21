@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Information - Eswar Women's PG</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.4),
+            rgba(0,0,0,0.4)),
+            url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85');
+            background-size: cover;
+            background-position: center;
+            height:100vh;
+        }
+
+        .header{
+            background-color:#8e44ad;
+            color:white;
+            padding:18px;
+            text-align:center;
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .contact-box{
+            width:450px;
+            margin:50px auto;
+            background:lightblue;
+            padding:30px;
+            border-radius:15px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .contact-box h2{
+            text-align:center;
+            color:#8e44ad;
+            margin-bottom:25px;
+        }
+
+        .info{
+            font-size:18px;
+            margin:15px 0;
+            color:#333;
+            line-height:1.6;
+        }
+
+        .label{
+            font-weight:bold;
+            color:#8e44ad;
+        }
+
+        .status-open{
+            color:green;
+            font-weight:bold;
+            font-size:20px;
+        }
+
+        .footer{
+            text-align:center;
+            color:white;
+            margin-top:20px;
+            font-size:14px;
+        }
+        .back-home{
+            text-align:center;
+            margin-top:20px;
+        }
+
+        .back-home a{
+            text-decoration:none;
+            background-color:#8e44ad;
+            color:white;
+            padding:12px 25px;
+            border-radius:8px;
+            font-size:16px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .back-home a:hover{
+            background-color:#6c3483;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    Eswar Women's PG - Contact Information
+</div>
+
+<div class="contact-box">
+    <h2>Reach Us</h2>
+
+    <div class="info">
+        <span class="label">Owner Name:</span>
+        Eswar
+    </div>
+
+    <div class="info">
+        <span class="label">Phone:</span>
+        +91 9876543210
+    </div>
+
+    <div class="info">
+        <span class="label">Email:</span>
+        eswarwomenspg@gmail.com
+    </div>
+
+    <div class="info">
+        <span class="label">Address:</span>
+        Eswar Women's PG,
+        Near XYZ College,
+        Hyderabad, Telangana.
+    </div>
+
+    <div class="info">
+        <span class="label">Opening Hours:</span>
+        6:00 AM - 10:00 PM
+    </div>
+
+    <div class="info">
+        <span class="label">Status:</span>
+        <span class="status-open">OPEN NOW</span>
+    </div>
+</div>
+<div class="back-home">
+    <a href="/">Back to Home</a>
+</div>
+
+<div class="footer">
+    Thank you for choosing Eswar Women's PG
+</div>
+
+</body>
+</html>

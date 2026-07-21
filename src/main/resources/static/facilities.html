@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PG Facilities</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            color: white;
+            text-align: center;
+
+            /* MAIN BACKGROUND */
+            background: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2') no-repeat center center/cover;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            top: 0;
+            left: 0;
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .header {
+            padding: 30px;
+        }
+
+        .header h1 {
+            font-size: 35px;
+        }
+
+        /* Facility images */
+
+
+
+
+        /* Cards */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 250px);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: aqua;
+            color: black;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        /* Button */
+        .back-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            border: none;
+            background: darkblue;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="content">
+
+    <div class="header">
+        <h1>Facilities at Eswar Women's PG</h1>
+    </div>
+
+    <!-- 4 REAL FACILITY IMAGES -->
+
+
+    <!-- FACILITIES LIST -->
+    <div class="container">
+        <div class="card">TV Facility</div>
+        <div class="card">Free Wi-Fi</div>
+        <div class="card">CCTV Security</div>
+        <div class="card">Hot Water (Geyser)</div>
+        <div class="card">Washing Machine</div>
+        <div class="card">Mineral Water</div>
+        <div class="card">Attached Washroom</div>
+        <div class="card">Locker Facility</div>
+    </div>
+
+    <button class="back-btn" onclick="goHome()">Back to Home</button>
+
+</div>
+
+<script>
+    function goHome() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>

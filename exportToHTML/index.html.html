@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bababa;}
+.s3 { color: #2aacb8;}
+.s4 { color: #6aab73;}
+.s5 { color: #7a7e85;}
+.s6 { color: #56a8f5;}
+.s7 { color: #cf8e6d;}
+</style>
+</head>
+<body bgcolor="#191a1c">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s1">Eshwar Women's PG</span><span class="s0">&lt;/title&gt;</span>
+
+    <span class="s0">&lt;style&gt;</span>
+        <span class="s0">body </span><span class="s1">{</span>
+            <span class="s2">margin</span><span class="s1">: </span><span class="s3">0</span><span class="s1">;</span>
+            <span class="s2">font-family</span><span class="s1">: </span><span class="s4">Arial</span><span class="s1">;</span>
+            <span class="s2">color</span><span class="s1">: </span><span class="s4">white</span><span class="s1">;</span>
+            <span class="s2">text-align</span><span class="s1">: </span><span class="s4">center</span><span class="s1">;</span>
+
+            <span class="s5">/* Background Image */</span>
+            <span class="s2">background</span><span class="s1">: </span><span class="s0">url</span><span class="s1">(</span><span class="s4">'https://images.unsplash.com/photo-1554995207-c18c203602cb'</span><span class="s1">) </span><span class="s4">no-repeat center center</span><span class="s1">/</span><span class="s4">cover</span><span class="s1">;</span>
+            <span class="s2">height</span><span class="s1">: </span><span class="s3">100</span><span class="s4">vh</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Overlay */</span>
+        <span class="s1">.</span><span class="s0">overlay </span><span class="s1">{</span>
+            <span class="s2">background</span><span class="s1">: </span><span class="s0">rgba</span><span class="s1">(</span><span class="s3">0</span><span class="s1">, </span><span class="s3">0</span><span class="s1">, </span><span class="s3">0</span><span class="s1">, </span><span class="s3">0.6</span><span class="s1">);</span>
+            <span class="s2">height</span><span class="s1">: </span><span class="s3">100</span><span class="s1">%;</span>
+            <span class="s2">width</span><span class="s1">: </span><span class="s3">100</span><span class="s1">%;</span>
+            <span class="s2">position</span><span class="s1">: </span><span class="s4">fixed</span><span class="s1">;</span>
+            <span class="s2">top</span><span class="s1">: </span><span class="s3">0</span><span class="s1">;</span>
+            <span class="s2">left</span><span class="s1">: </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Content */</span>
+        <span class="s1">.</span><span class="s0">content </span><span class="s1">{</span>
+            <span class="s2">position</span><span class="s1">: </span><span class="s4">relative</span><span class="s1">;</span>
+            <span class="s2">z-index</span><span class="s1">: </span><span class="s3">1</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Header */</span>
+        <span class="s1">.</span><span class="s0">header </span><span class="s1">{</span>
+            <span class="s2">padding</span><span class="s1">: </span><span class="s3">30</span><span class="s4">px</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s1">.</span><span class="s0">header h1 </span><span class="s1">{</span>
+            <span class="s2">font-size</span><span class="s1">: </span><span class="s3">40</span><span class="s4">px</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Subtitle */</span>
+        <span class="s1">.</span><span class="s0">para </span><span class="s1">{</span>
+            <span class="s2">font-family</span><span class="s1">: </span><span class="s4">monospace</span><span class="s1">;</span>
+            <span class="s2">font-size</span><span class="s1">: </span><span class="s3">20</span><span class="s4">px</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Button container (VERTICAL) */</span>
+        <span class="s1">.</span><span class="s0">container </span><span class="s1">{</span>
+            <span class="s2">display</span><span class="s1">: </span><span class="s4">flex</span><span class="s1">;</span>
+            <span class="s2">flex-direction</span><span class="s1">: </span><span class="s4">column</span><span class="s1">;</span>
+            <span class="s2">align-items</span><span class="s1">: </span><span class="s4">center</span><span class="s1">;</span>
+            <span class="s2">gap</span><span class="s1">: </span><span class="s3">15</span><span class="s4">px</span><span class="s1">;</span>
+            <span class="s2">margin-top</span><span class="s1">: </span><span class="s3">40</span><span class="s4">px</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Buttons */</span>
+        <span class="s0">button </span><span class="s1">{</span>
+            <span class="s2">width</span><span class="s1">: </span><span class="s3">250</span><span class="s4">px</span><span class="s1">;</span>
+            <span class="s2">padding</span><span class="s1">: </span><span class="s3">15</span><span class="s4">px</span><span class="s1">;</span>
+            <span class="s2">font-size</span><span class="s1">: </span><span class="s3">16</span><span class="s4">px</span><span class="s1">;</span>
+            <span class="s2">border</span><span class="s1">: </span><span class="s4">none</span><span class="s1">;</span>
+            <span class="s2">border-radius</span><span class="s1">: </span><span class="s3">10</span><span class="s4">px</span><span class="s1">;</span>
+            <span class="s2">background</span><span class="s1">: </span><span class="s4">skyblue</span><span class="s1">;</span>
+            <span class="s2">color</span><span class="s1">: </span><span class="s6">#1e3c72</span><span class="s1">;</span>
+            <span class="s2">cursor</span><span class="s1">: </span><span class="s4">pointer</span><span class="s1">;</span>
+
+            <span class="s5">/* Start hidden left */</span>
+            <span class="s2">transform</span><span class="s1">: </span><span class="s0">translateX</span><span class="s1">(-</span><span class="s3">300</span><span class="s4">px</span><span class="s1">);</span>
+            <span class="s2">opacity</span><span class="s1">: </span><span class="s3">0</span><span class="s1">;</span>
+
+            <span class="s2">transition</span><span class="s1">: </span><span class="s3">0.3</span><span class="s4">s</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Hover */</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">hover </span><span class="s1">{</span>
+            <span class="s2">background</span><span class="s1">: </span><span class="s4">lightgray</span><span class="s1">;</span>
+            <span class="s2">transform</span><span class="s1">: </span><span class="s0">scale</span><span class="s1">(</span><span class="s3">1.05</span><span class="s1">);</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Click */</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">active </span><span class="s1">{</span>
+            <span class="s2">background</span><span class="s1">: </span><span class="s4">gray</span><span class="s1">;</span>
+            <span class="s2">color</span><span class="s1">: </span><span class="s4">white</span><span class="s1">;</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* Animation */</span>
+        <span class="s7">@keyframes </span><span class="s0">slideIn </span><span class="s1">{</span>
+            <span class="s0">to </span><span class="s1">{</span>
+                <span class="s2">transform</span><span class="s1">: </span><span class="s0">translateX</span><span class="s1">(</span><span class="s3">0</span><span class="s1">);</span>
+                <span class="s2">opacity</span><span class="s1">: </span><span class="s3">1</span><span class="s1">;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s5">/* DELAYS (one by one slowly) */</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">nth-child</span><span class="s1">(</span><span class="s3">1</span><span class="s1">) { </span><span class="s2">animation</span><span class="s1">: </span><span class="s4">slideIn </span><span class="s3">0.8</span><span class="s4">s forwards </span><span class="s3">0.5</span><span class="s4">s</span><span class="s1">; }</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">nth-child</span><span class="s1">(</span><span class="s3">2</span><span class="s1">) { </span><span class="s2">animation</span><span class="s1">: </span><span class="s4">slideIn </span><span class="s3">0.8</span><span class="s4">s forwards </span><span class="s3">1</span><span class="s4">s</span><span class="s1">; }</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">nth-child</span><span class="s1">(</span><span class="s3">3</span><span class="s1">) { </span><span class="s2">animation</span><span class="s1">: </span><span class="s4">slideIn </span><span class="s3">0.8</span><span class="s4">s forwards </span><span class="s3">1.5</span><span class="s4">s</span><span class="s1">; }</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">nth-child</span><span class="s1">(</span><span class="s3">4</span><span class="s1">) { </span><span class="s2">animation</span><span class="s1">: </span><span class="s4">slideIn </span><span class="s3">0.8</span><span class="s4">s forwards </span><span class="s3">2</span><span class="s4">s</span><span class="s1">; }</span>
+        <span class="s0">button</span><span class="s1">:</span><span class="s0">nth-child</span><span class="s1">(</span><span class="s3">5</span><span class="s1">) { </span><span class="s2">animation</span><span class="s1">: </span><span class="s4">slideIn </span><span class="s3">0.8</span><span class="s4">s forwards </span><span class="s3">2.5</span><span class="s4">s</span><span class="s1">; }</span>
+
+    <span class="s0">&lt;/style&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+
+<span class="s0">&lt;body&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s4">=&quot;overlay&quot;</span><span class="s0">&gt;&lt;/div&gt;</span>
+
+<span class="s0">&lt;div </span><span class="s2">class</span><span class="s4">=&quot;content&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s4">=&quot;header&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;h1&gt;</span><span class="s1">Welcome to Eshwar Women's PG</span><span class="s0">&lt;/h1&gt;</span>
+        <span class="s0">&lt;p </span><span class="s2">class</span><span class="s4">=&quot;para&quot;</span><span class="s0">&gt;</span><span class="s1">Safe  Comfortable  Affordable Living</span><span class="s0">&lt;/p&gt;</span>
+       
+    <span class="s0">&lt;/div&gt;</span>
+
+    <span class="s0">&lt;div </span><span class="s2">class</span><span class="s4">=&quot;container&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;button </span><span class="s2">onclick</span><span class="s4">=&quot;</span><span class="s1">goTo(</span><span class="s4">'register.html'</span><span class="s1">)</span><span class="s4">&quot;</span><span class="s0">&gt;</span><span class="s1">Registration</span><span class="s0">&lt;/button&gt;</span>
+
+        <span class="s0">&lt;button </span><span class="s2">onclick</span><span class="s4">=&quot;</span><span class="s1">goTo(</span><span class="s4">'facilities.html'</span><span class="s1">)</span><span class="s4">&quot;</span><span class="s0">&gt;</span><span class="s1">PG Facilities</span><span class="s0">&lt;/button&gt;</span>
+
+        <span class="s0">&lt;button </span><span class="s2">onclick</span><span class="s4">=&quot;</span><span class="s1">goTo(</span><span class="s4">'pricing.html'</span><span class="s1">)</span><span class="s4">&quot;</span><span class="s0">&gt;</span><span class="s1">Room &amp; Pricing</span><span class="s0">&lt;/button&gt;</span>
+
+        <span class="s0">&lt;button </span><span class="s2">onclick</span><span class="s4">=&quot;</span><span class="s1">goTo(</span><span class="s4">'payment.html'</span><span class="s1">)</span><span class="s4">&quot;</span><span class="s0">&gt;</span><span class="s1">Payment</span><span class="s0">&lt;/button&gt;</span>
+
+        <span class="s0">&lt;button </span><span class="s2">onclick</span><span class="s4">=&quot;</span><span class="s1">goTo(</span><span class="s4">'contact.html'</span><span class="s1">)</span><span class="s4">&quot;</span><span class="s0">&gt;</span><span class="s1">Contact</span><span class="s0">&lt;/button&gt;</span>
+
+    <span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;/div&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s7">function </span><span class="s1">goTo(page) {</span>
+        <span class="s1">window.location.href = page;</span>
+    <span class="s1">}</span>
+<span class="s0">&lt;/script&gt;</span>
+
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Room Pricing</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #eef2f3;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: #1e3c72;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 30px;
+        }
+
+        .card {
+            width: 300px;
+            height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 5px;
+            padding: 6px 12px;
+            border: none;
+            background: orange;
+            color: black;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: gold;
+        }
+
+        .rules {
+            margin: 20px auto;
+            width: 60%;
+            background: palevioletred;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Room Pricing - Eswar Women's PG</h1>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <img src="/images/2share.jpeg">
+        <div class="overlay">
+            <h3>2 Sharing</h3>
+            <p>7000 / month</p>
+            <button onclick="sendRequest('2 Sharing')">Request</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="/images/3share.jpeg">
+        <div class="overlay">
+            <h3>3 Sharing</h3>
+            <p>5800 / month</p>
+            <button onclick="sendRequest('3 Sharing')">Request</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="/images/4share.jpeg">
+        <div class="overlay">
+            <h3>4 Sharing</h3>
+            <p>5500 / month</p>
+            <button onclick="sendRequest('4 Sharing')">Request</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="/images/5share.jpeg">
+        <div class="overlay">
+            <h3>5 Sharing</h3>
+            <p>5000 / month</p>
+            <button onclick="sendRequest('5 Sharing')">Request</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="/images/6share.jpeg">
+        <div class="overlay">
+            <h3>6 Sharing</h3>
+            <p>6000 / month</p>
+            <button onclick="sendRequest('6 Sharing')">Request</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="rules">
+    <h3>!!!Rules</h3>
+    <p> Advance: 1000</p>
+    <p> 500 refund if informed 15 days before leaving</p>
+    <p>NOTE:Only if owner will approve your request</p>
+</div>
+<div style="text-align:center; margin-bottom: 30px;">
+    <button onclick="goHome()" style="padding:10px 20px; background:#1e3c72; color:white; border:none; border-radius:6px; cursor:pointer;">
+        Back to Home
+    </button>
+</div>
+
+<script>
+    function sendRequest(roomType) {
+        fetch("http://localhost:8080/request/add", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ roomType: roomType })
+        })
+            .then(() => alert("Request sent for " + roomType))
+            .catch(() => alert("Error sending request"));
+    }
+    function goHome() {
+        window.location.href = "index.html";
+    }
+</script>
+
+
+</body>
+</html>

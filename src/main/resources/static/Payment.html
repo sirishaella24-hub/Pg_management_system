@@ -1,0 +1,163 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Payment Module - Eswar Women's PG</title>
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+
+                /* Payment background image */
+               background-color: #5F259F;
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 100vh;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .payment-box {
+                width: 400px;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 0 15px gray;
+                text-align: center;
+            }
+
+            h2 {
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+            .logos {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .logos img {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+            }
+
+            input {
+                width: 100%;
+                padding: 12px;
+                margin-top: 12px;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                box-sizing: border-box;
+                font-size: 15px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px;
+                margin-top: 18px;
+                background-color: green;
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: darkgreen;
+            }
+
+            .back-btn {
+                background-color: #444;
+                margin-top: 10px;
+            }
+
+            .back-btn:hover {
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+
+    <div class="payment-box">
+
+        <h2>Upload Payment Receipt</h2>
+
+        <div class="logos">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/71/PhonePe_Logo.svg" alt="PhonePe">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay">
+
+        </div>
+
+        <form id="paymentForm">
+
+            <input type="text"
+                   id="name"
+                   placeholder="Enter Your Name"
+                   required>
+
+            <input type="text"
+                   id="roomNumber"
+                   placeholder="Enter Room Number"
+                   required>
+
+            <input type="file"
+                   id="file"
+                   accept=".jpg,.jpeg,.png,.webp,.gif,.bmp"
+                   required>
+
+            <button type="submit">
+                Submit Payment
+            </button>
+
+        </form>
+
+        <button class="back-btn" onclick="goHome()">
+            Back to Home
+        </button>
+
+    </div>
+
+    <script>
+        document.getElementById("paymentForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append("name", document.getElementById("name").value);
+            formData.append("roomNumber", document.getElementById("roomNumber").value);
+            formData.append("file", document.getElementById("file").files[0]);
+
+            fetch("/payment/upload", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(msg => {
+                    if (msg === "SUCCESS") {
+                        alert("Payment receipt submitted successfully!");
+                        document.getElementById("paymentForm").reset();
+                    } else {
+                        alert("Upload failed: " + msg);
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                    alert("Upload failed");
+                });
+        });
+
+        function goHome() {
+            window.location.href = "/index.html";
+        }
+    </script>
+
+    </body>
+    </html>
